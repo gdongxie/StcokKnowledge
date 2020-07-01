@@ -41,7 +41,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initView() {
-        var intent = intent
+        val intent = intent
         mIndex = intent.getIntExtra("index", 0)
     }
 

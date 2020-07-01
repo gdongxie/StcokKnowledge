@@ -28,7 +28,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
             android:layout_toEndOf="@id/iv_suggest"
-            android:text="意见反馈"
+            android:text="@string/text_suggest"
             android:textSize="16sp" />
 
         <View
@@ -102,7 +102,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
             android:layout_toEndOf="@id/iv_about"
-            android:text="关于我们"
+            android:text="@string/text_about"
             android:textSize="16sp" />
 
         <View
@@ -134,7 +134,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
             android:layout_toEndOf="@id/iv_logOut"
-            android:text="注销账号"
+            android:text="@string/logout_account"
             android:textSize="16sp" />
 
         <View
@@ -142,43 +142,6 @@
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
             android:background="#eeeeee" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/card_login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp">
-
-        <TextView
-            android:id="@+id/tv_protocol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="《用户协议》"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/tv_protocol"
-            android:text="&amp;"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_policy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="2dp"
-            android:layout_toEndOf="@id/tv2"
-            android:text="《隐私政策》"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="16sp" />
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
@@ -216,7 +179,6 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/card_login"
         android:layout_width="match_parent"
@@ -233,8 +195,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="登录/注册"
+            android:text="@string/text_login_register"
             android:textColor="@color/colorWhite"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

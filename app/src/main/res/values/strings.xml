@@ -20,4 +20,9 @@
     <string name="login_failed">"Login failed"</string>
     <string name="text_new_register">新用户注册</string>
     <string name="title_register">注册</string>
+    <string name="text_login_register">登录/注册</string>
+    <string name="logout_account">注销账号</string>
+    <string name="text_suggest">意见反馈</string>
+    <string name="text_about">关于我们</string>
+    <string name="hint_advice">请输入您的意见或者建议</string>
 </resources>
