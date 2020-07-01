@@ -26,6 +26,8 @@ import android.widget.Toast;
 
 import com.stock.knowledge.R;
 import com.stock.knowledge.base.BaseActivity;
+import com.stock.knowledge.ui.activities.AgreementActivity;
+import com.stock.knowledge.ui.activities.SplashActivity;
 import com.stock.knowledge.ui.register.RegisterActivity;
 
 public class LoginActivity extends BaseActivity {
@@ -44,7 +46,8 @@ public class LoginActivity extends BaseActivity {
         final Button loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
         final TextView tv_register = findViewById(R.id.tv_register);
-
+        final TextView tv_protocol = findViewById(R.id.tv_protocol);
+        final TextView tv_privacy = findViewById(R.id.tv_privacy);
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
             public void onChanged(@Nullable LoginFormState loginFormState) {
@@ -128,6 +131,22 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+        });
+        tv_protocol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, AgreementActivity.class);
+                intent.putExtra("title", "用户协议");
+                startActivity(intent);
+            }
+        });
+        tv_privacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, AgreementActivity.class);
+                intent.putExtra("title", "隐私政策");
+                startActivity(intent);
             }
         });
     }

@@ -118,6 +118,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SplashActivity.this, AgreementActivity.class);
+                intent.putExtra("title", "用户协议");
                 startActivity(intent);
             }
 
@@ -134,6 +135,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SplashActivity.this, AgreementActivity.class);
+                intent.putExtra("title", "隐私政策");
                 startActivity(intent);
             }
 
