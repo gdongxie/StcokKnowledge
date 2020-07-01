@@ -7,6 +7,7 @@
     <color name="colorLoading">#F8F8FF</color>
     <color name="colorLoadingBackground">#cc111111</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorRed_light">#FF7070</color>
     <color name="colorRed">#FF3030</color>
     <color name="color_black">#000000</color>
     <color name="color_gray">#9a9a9a</color>

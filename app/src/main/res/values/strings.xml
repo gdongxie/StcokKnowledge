@@ -8,10 +8,10 @@
     <string name="users_note">用户须知</string>
     <string name="privacy_tips_key1">《用户协议》</string>
     <string name="privacy_tips_key2">《隐私政策》</string>
-    <string name="title_activity_login">Sign in</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="title_activity_login">登录</string>
+    <string name="prompt_email">手机号</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登录</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
