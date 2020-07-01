@@ -6,15 +6,18 @@
     <string name="privacy_agree">同意</string>
     <string name="privacy_tips">感谢您使用期货题库宝软件！为了保护您的隐私和使用安全，请您务必仔细阅读我们的《用户协议》和《隐私政策》。在确认充分理解并同意后再开始使用此应用。感谢！</string>
     <string name="users_note">用户须知</string>
-    <string name="privacy_tips_key1">《用户协议》</string>
-    <string name="privacy_tips_key2">《隐私政策》</string>
+    <string name="privacy_tips_key1">用户协议</string>
+    <string name="privacy_tips_key2">隐私政策</string>
     <string name="title_activity_login">登录</string>
     <string name="prompt_email">手机号</string>
     <string name="prompt_password">密码</string>
+    <string name="confirm_password">确认密码</string>
     <string name="action_sign_in">登录</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="text_new_register">新用户注册</string>
+    <string name="title_register">注册</string>
 </resources>
