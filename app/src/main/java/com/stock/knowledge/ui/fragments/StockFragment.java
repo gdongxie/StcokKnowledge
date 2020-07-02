@@ -29,7 +29,7 @@ public class StockFragment extends Fragment {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private List<Fragment> fragmentList = new ArrayList<>();
-    private String[] strings = new String[]{"港股列表", "美股列表"};
+    private String[] strings = new String[]{"港股", "美股"};
 
 
     public static StockFragment newInstance() {

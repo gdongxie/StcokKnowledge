@@ -16,7 +16,7 @@ import com.stock.knowledge.ui.fragments.MyFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
-    private val mTitles = arrayOf("首页", "股票", "资料", "我的")
+    private val mTitles = arrayOf("首页", "市场", "资料", "我的")
 
     //为选中图标
     private val mIconSelectIds = intArrayOf(R.mipmap.home, R.mipmap.stock, R.mipmap.news, R.mipmap.my)
