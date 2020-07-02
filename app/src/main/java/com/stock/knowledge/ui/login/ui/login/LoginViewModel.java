@@ -4,19 +4,17 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import android.util.Patterns;
-
 import com.stock.knowledge.R;
 import com.stock.knowledge.ui.login.data.LoginRepository;
 import com.stock.knowledge.ui.login.data.Result;
 import com.stock.knowledge.ui.login.data.model.LoggedInUser;
+import com.stock.knowledge.utils.AssetsDatabaseManager;
 
 public class LoginViewModel extends ViewModel {
 
     private MutableLiveData<LoginFormState> loginFormState = new MutableLiveData<>();
     private MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
     private LoginRepository loginRepository;
-
     LoginViewModel(LoginRepository loginRepository) {
         this.loginRepository = loginRepository;
     }
@@ -29,8 +27,14 @@ public class LoginViewModel extends ViewModel {
         return loginResult;
     }
 
+    /**
+     * 登录
+     *
+     * @param username
+     * @param password
+     */
     public void login(String username, String password) {
-        // can be launched in a separate asynchronous job
+
         Result<LoggedInUser> result = loginRepository.login(username, password);
 
         if (result instanceof Result.Success) {
@@ -51,20 +55,18 @@ public class LoginViewModel extends ViewModel {
         }
     }
 
-    // A placeholder username validation check
     private boolean isUserNameValid(String username) {
-        if (username == null) {
+        String telRegex = "^((13[0-9])|(14[5,6,7,9])|(15[^4])|(16[5,6])|(17[0-9])|(18[0-9])|" +
+                "(19[1,8,9]))\\d{8}$";
+
+        if (username.equals("") || username.trim().length() != 11) {
             return false;
-        }
-        if (username.contains("@")) {
-            return Patterns.EMAIL_ADDRESS.matcher(username).matches();
         } else {
-            return !username.trim().isEmpty();
+            return username.matches(telRegex);
         }
     }
 
-    // A placeholder password validation check
     private boolean isPasswordValid(String password) {
-        return password != null && password.trim().length() > 5;
+        return password != null && password.trim().length() >= 6;
     }
 }

@@ -2,7 +2,6 @@ package com.stock.knowledge.ui.login.ui.login;
 
 import android.app.Activity;
 
-import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -11,7 +10,6 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -27,8 +25,8 @@ import android.widget.Toast;
 import com.stock.knowledge.R;
 import com.stock.knowledge.base.BaseActivity;
 import com.stock.knowledge.ui.activities.AgreementActivity;
-import com.stock.knowledge.ui.activities.SplashActivity;
 import com.stock.knowledge.ui.register.RegisterActivity;
+import com.stock.knowledge.utils.SharedPreferencesUtil;
 
 public class LoginActivity extends BaseActivity {
 
@@ -80,10 +78,6 @@ public class LoginActivity extends BaseActivity {
                 if (loginResult.getSuccess() != null) {
                     updateUiWithUser(loginResult.getSuccess());
                 }
-                setResult(Activity.RESULT_OK);
-
-                //Complete and destroy login activity once successful
-                finish();
             }
         });
 
@@ -153,8 +147,10 @@ public class LoginActivity extends BaseActivity {
 
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        SharedPreferencesUtil.putBoolean(getApplicationContext(), "isLogin", true);
+        SharedPreferencesUtil.putString(getApplicationContext(), "username", model.getDisplayName());
+        finish();
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {

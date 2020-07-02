@@ -33,20 +33,30 @@
             android:textSize="18sp" />
     </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="80dp"
+        android:src="@mipmap/head_portrait"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_title" />
+
     <EditText
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/prompt_email"
         android:importantForAutofill="no"
-        android:inputType="textEmailAddress"
+        android:inputType="phone"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rl_title" />
+        app:layout_constraintTop_toBottomOf="@id/iv_head" />
 
     <EditText
         android:id="@+id/password"
@@ -56,7 +66,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/prompt_password"
-        android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="textPassword"
@@ -133,11 +142,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
             android:layout_toEndOf="@id/tv1"
             android:text="@string/privacy_tips_key1"
             android:textColor="@color/colorRed"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"
             android:textSize="13sp" />
 
         <TextView
@@ -154,10 +163,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginStart="2dp"
             android:layout_toEndOf="@id/tv_and"
             android:text="@string/privacy_tips_key2"
             android:textColor="@color/colorRed"
-            android:layout_marginStart="2dp"
             android:textSize="13sp" />
     </RelativeLayout>
 

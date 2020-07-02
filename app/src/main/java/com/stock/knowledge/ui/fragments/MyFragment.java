@@ -58,22 +58,9 @@ public class MyFragment extends Fragment {
         return root;
     }
 
-    private void initView(View root) {
-        cardView = root.findViewById(R.id.card_login);
-        tv_username = root.findViewById(R.id.tv_username);
-        rl_suggest = root.findViewById(R.id.rl_suggest);
-        rl_update = root.findViewById(R.id.rl_update);
-        rl_about = root.findViewById(R.id.rl_about);
-        rl_logOut = root.findViewById(R.id.rl_logOut);
-        tv_login = root.findViewById(R.id.tv_login);
-
-        loadingDialog = new ZLoadingDialog(getActivity());
-        loadingDialog.setLoadingBuilder(Z_TYPE.ROTATE_CIRCLE)
-                .setLoadingColor(getActivity().getColor(R.color.colorLoading))
-                .setCancelable(false)
-                .setHintTextSize(16f)
-                .setHintTextColor(getActivity().getColor(R.color.colorWhite))
-                .setDialogBackgroundColor(getActivity().getColor(R.color.colorLoadingBackground));
+    @Override
+    public void onResume() {
+        super.onResume();
         if (SharedPreferencesUtil.getBoolean(Objects.requireNonNull(getActivity()).getApplicationContext(), "isLogin", false)) {
             tv_username.setText(SharedPreferencesUtil.getString(getActivity().getApplicationContext(), "username", ""));
             tv_login.setText("退出");
@@ -83,6 +70,24 @@ public class MyFragment extends Fragment {
             tv_login.setText("登录/注册");
             rl_logOut.setVisibility(View.INVISIBLE);
         }
+    }
+
+    private void initView(View root) {
+        cardView = root.findViewById(R.id.card_login);
+        tv_username = root.findViewById(R.id.tv_username);
+        rl_suggest = root.findViewById(R.id.rl_suggest);
+        rl_update = root.findViewById(R.id.rl_update);
+        rl_about = root.findViewById(R.id.rl_about);
+        rl_logOut = root.findViewById(R.id.rl_logOut);
+        tv_login = root.findViewById(R.id.tv_login);
+        loadingDialog = new ZLoadingDialog(Objects.requireNonNull(getActivity()));
+        loadingDialog.setLoadingBuilder(Z_TYPE.ROTATE_CIRCLE)
+                .setLoadingColor(getActivity().getColor(R.color.colorLoading))
+                .setCancelable(false)
+                .setHintTextSize(16f)
+                .setHintTextColor(getActivity().getColor(R.color.colorWhite))
+                .setDialogBackgroundColor(getActivity().getColor(R.color.colorLoadingBackground));
+
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

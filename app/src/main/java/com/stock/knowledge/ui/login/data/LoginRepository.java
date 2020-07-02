@@ -1,6 +1,7 @@
 package com.stock.knowledge.ui.login.data;
 
 import com.stock.knowledge.ui.login.data.model.LoggedInUser;
+import com.stock.knowledge.utils.AssetsDatabaseManager;
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -11,6 +12,7 @@ public class LoginRepository {
     private static volatile LoginRepository instance;
 
     private LoginDataSource dataSource;
+
 
     // If user credentials will be cached in local storage, it is recommended it be encrypted
     // @see https://developer.android.com/training/articles/keystore
@@ -44,6 +46,7 @@ public class LoginRepository {
     }
 
     public Result<LoggedInUser> login(String username, String password) {
+
         // handle login
         Result<LoggedInUser> result = dataSource.login(username, password);
         if (result instanceof Result.Success) {
