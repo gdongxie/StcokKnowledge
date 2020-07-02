@@ -50,7 +50,7 @@
         app:tl_iconWidth="23dp"
         app:tl_indicator_color="#E6E6E6"
         app:tl_indicator_height="0dp"
-        app:tl_textSelectColor="#1296db"
+        app:tl_textSelectColor="@color/colorRed"
         app:tl_textUnselectColor="#E6E6E6"
         app:tl_textsize="10sp"
         app:tl_underline_color="#E6E6E6"

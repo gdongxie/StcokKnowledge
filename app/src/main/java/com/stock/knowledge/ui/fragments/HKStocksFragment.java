@@ -15,11 +15,11 @@ import com.stock.knowledge.R;
  * @Author: dongxie
  * @CreateDate: 2020/6/23 20:18
  */
-public class DynamicFragment extends Fragment {
+public class HKStocksFragment extends Fragment {
 
 
-    public static DynamicFragment newInstance() {
-        DynamicFragment fragment = new DynamicFragment();
+    public static HKStocksFragment newInstance() {
+        HKStocksFragment fragment = new HKStocksFragment();
         return fragment;
     }
 
@@ -32,7 +32,7 @@ public class DynamicFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_dynamic, container, false);
+        View root = inflater.inflate(R.layout.fragment_hk_stock, container, false);
         return root;
     }
 

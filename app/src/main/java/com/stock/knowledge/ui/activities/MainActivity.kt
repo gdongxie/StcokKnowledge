@@ -1,33 +1,31 @@
 package com.stock.knowledge.ui.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.flyco.tablayout.listener.OnTabSelectListener
-import com.gyf.immersionbar.ImmersionBar
 import com.stock.knowledge.R
 import com.stock.knowledge.base.BaseActivity
 import com.stock.knowledge.base.TabEntity
 import com.stock.knowledge.ui.fragments.DataFragment
-import com.stock.knowledge.ui.fragments.DynamicFragment
+import com.stock.knowledge.ui.fragments.StockFragment
 import com.stock.knowledge.ui.fragments.HomeFragment
 import com.stock.knowledge.ui.fragments.MyFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
-    private val mTitles = arrayOf("首页", "动态", "资料", "我的")
+    private val mTitles = arrayOf("首页", "股票", "资料", "我的")
 
     //为选中图标
-    private val mIconSelectIds = intArrayOf(R.mipmap.home, R.mipmap.dynamic, R.mipmap.news, R.mipmap.my)
+    private val mIconSelectIds = intArrayOf(R.mipmap.home, R.mipmap.stock, R.mipmap.news, R.mipmap.my)
 
     //选中的图标
-    private val mIconUnSelectIds = intArrayOf(R.mipmap.unhome, R.mipmap.un_dynamic, R.mipmap.unnews, R.mipmap.unmy)
+    private val mIconUnSelectIds = intArrayOf(R.mipmap.un_home, R.mipmap.un_stock, R.mipmap.un_news, R.mipmap.un_my)
     private val mTabEntities = ArrayList<CustomTabEntity>()
     private var mHomeFragment: HomeFragment? = null
-    private var mDynamicFragment: DynamicFragment? = null
+    private var mStockFragment: StockFragment? = null
     private var mDataFragment: DataFragment? = null
     private var mMyFragment: MyFragment? = null
     private var mIndex = 0
@@ -82,10 +80,10 @@ class MainActivity : BaseActivity() {
             }
             1
             -> {
-                mDynamicFragment?.let {
+                mStockFragment?.let {
                     transaction.show(it)
-                } ?: DynamicFragment.newInstance().let {
-                    mDynamicFragment = it
+                } ?: StockFragment.newInstance().let {
+                    mStockFragment = it
                     transaction.add(R.id.fl_container, it, "news")
                 }
                 tv_title.text = mTitles[position]
@@ -120,7 +118,7 @@ class MainActivity : BaseActivity() {
 
     private fun hideFragments(transaction: FragmentTransaction) {
         mHomeFragment?.let { transaction.hide(it) }
-        mDynamicFragment?.let { transaction.hide(it) }
+        mStockFragment?.let { transaction.hide(it) }
         mDataFragment?.let { transaction.hide(it) }
         mMyFragment?.let { transaction.hide(it) }
     }
