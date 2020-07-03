@@ -45,6 +45,8 @@ public class HKStocksFragment extends Fragment {
     private HkStockAdapter dataAdapter;
     private CompositeDisposable disposable = new CompositeDisposable();
     private int page = 1;
+    private boolean isFirstLoad = true;
+    private ZLoadingDialog loadingDialog;
 
     public static HKStocksFragment newInstance() {
         HKStocksFragment fragment = new HKStocksFragment();
@@ -75,28 +77,42 @@ public class HKStocksFragment extends Fragment {
         refreshLayout.setDragRate(0.5f);
         refreshLayout.setReboundDuration(300);
         refreshLayout.setHeaderHeight(100);
+        loadingDialog = new ZLoadingDialog(Objects.requireNonNull(getActivity()));
+        loadingDialog.setLoadingBuilder(Z_TYPE.ROTATE_CIRCLE)
+                .setLoadingColor(getActivity().getColor(R.color.colorLoading))
+                .setCancelable(false)
+                .setHintTextSize(16f)
+                .setHintTextColor(getActivity().getColor(R.color.colorWhite))
+                .setDialogBackgroundColor(getActivity().getColor(R.color.colorLoadingBackground));
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(final RefreshLayout refreshlayout) {
                 dataBeanList.clear();
                 page = 1;
+                isFirstLoad = false;
                 getData();
                 refreshlayout.finishRefresh(true);
             }
         });
 
-//        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
-//            @Override
-//            public void onLoadMore(final RefreshLayout refreshlayout) {
-//                page += 1;
-//                getData();
-//                refreshlayout.finishLoadMore(true);
-//            }
-//
-//        });
+        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(final RefreshLayout refreshlayout) {
+                page += 1;
+                isFirstLoad = false;
+                getData();
+                refreshlayout.finishLoadMore(true);
+            }
+
+        });
     }
 
     private void getData() {
+        if (isFirstLoad) {
+            loadingDialog.show();
+        } else {
+            loadingDialog.dismiss();
+        }
         disposable.add(
                 RetrofitUtils.INSTANCE.getApiService(ApiService.class)
                         .getHkStocks(page)
@@ -105,11 +121,12 @@ public class HKStocksFragment extends Fragment {
                         .subscribe(new Consumer<HkStockBean>() {
                             @Override
                             public void accept(HkStockBean hkStockBean) throws Exception {
+                                if (isFirstLoad) {
+                                    loadingDialog.dismiss();
+                                }
                                 if (0 == hkStockBean.getError_code()) {
                                     if (hkStockBean.getResult().getData().size() > 0) {
-                                        for (int i = 0; i < hkStockBean.getResult().getData().size(); i++) {
-                                            dataBeanList.addAll(hkStockBean.getResult().getData());
-                                        }
+                                        dataBeanList.addAll(hkStockBean.getResult().getData());
                                         dataAdapter.notifyDataSetChanged();
                                     } else {
                                         Toast.makeText(getContext(), "暂无数据", Toast.LENGTH_SHORT).show();
@@ -122,6 +139,9 @@ public class HKStocksFragment extends Fragment {
                         }, new Consumer<Throwable>() {
                             @Override
                             public void accept(Throwable throwable) throws Exception {
+                                if (isFirstLoad) {
+                                    loadingDialog.dismiss();
+                                }
                                 throwable.printStackTrace();
                             }
                         })
