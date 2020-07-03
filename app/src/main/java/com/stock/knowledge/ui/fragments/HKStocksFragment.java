@@ -23,6 +23,8 @@ import com.stock.knowledge.ui.adapter.HkStockAdapter;
 import com.zyao89.view.zloading.ZLoadingDialog;
 import com.zyao89.view.zloading.Z_TYPE;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -86,7 +88,7 @@ public class HKStocksFragment extends Fragment {
                 .setDialogBackgroundColor(getActivity().getColor(R.color.colorLoadingBackground));
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
-            public void onRefresh(final RefreshLayout refreshlayout) {
+            public void onRefresh(@NotNull final RefreshLayout refreshlayout) {
                 dataBeanList.clear();
                 page = 1;
                 isFirstLoad = false;
@@ -97,7 +99,7 @@ public class HKStocksFragment extends Fragment {
 
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
-            public void onLoadMore(final RefreshLayout refreshlayout) {
+            public void onLoadMore(@NotNull final RefreshLayout refreshlayout) {
                 page += 1;
                 isFirstLoad = false;
                 getData();
