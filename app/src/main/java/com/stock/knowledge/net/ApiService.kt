@@ -22,10 +22,5 @@ interface ApiService {
     @GET("finance/stock/usaall?key=ec3d425c24ff99d81b84a3b4ec4bcc0c")
     fun getUsStocks(@Query("page") page: Int): Flowable<UsaStockBean>
 
-    /**
-     * http://v.juhe.cn/toutiao/index?type=caijing&key=c10a52bbc484e6fbfc571cc40082a9ee
-     * 获取财经新闻列表
-     */
-    @GET("toutiao/index?type=caijing&key=c10a52bbc484e6fbfc571cc40082a9ee")
-    fun getFinance(): Flowable<FinanceBean>
+
 }

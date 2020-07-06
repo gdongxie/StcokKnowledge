@@ -10,7 +10,6 @@ import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.List;
 
 public class HkStockAdapter extends CommonAdapter<HkStockBean.ResultBean.DataBean> {

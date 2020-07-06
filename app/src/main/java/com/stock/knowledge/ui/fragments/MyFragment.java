@@ -139,7 +139,7 @@ public class MyFragment extends Fragment {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setTitle("关于我们");
-                builder.setMessage("股票答题宝\n专业全面的股票答题软件\n当前版本：V1.0.0");
+                builder.setMessage("股票答题助手\n专业全面的股票答题软件\n当前版本：V1.0.0");
                 builder.setCancelable(false);
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
@@ -162,7 +162,7 @@ public class MyFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
                         SQLiteDatabase sqLiteDatabase = databaseManager.getDatabase("gupiao.db");
                         String[] args =
-                                {SharedPreferencesUtil.getString(getActivity().getApplicationContext(),
+                                {SharedPreferencesUtil.getString(Objects.requireNonNull(getActivity()).getApplicationContext(),
                                         "username", "")};
                         final int i = sqLiteDatabase.delete("user", "mobile=?", args);
                         loadingDialog.setHintText("注销中...");

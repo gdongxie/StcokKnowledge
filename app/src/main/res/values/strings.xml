@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">股票答题宝</string>
+    <string name="app_name">股票答题助手</string>
     <string name="splash_desc">每日一答　轻松备考</string>
     <string name="text_version">V1.0.0</string>
     <string name="privacy_exit">退出</string>

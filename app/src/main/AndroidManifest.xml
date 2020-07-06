@@ -26,6 +26,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activities.MainActivity" />
+        <activity android:name=".ui.activities.WebViewActivity" />
+        <activity android:name=".ui.activities.ExamListActivity" />
+        <activity android:name=".ui.activities.ExamActivity" />
     </application>
 
 </manifest>
