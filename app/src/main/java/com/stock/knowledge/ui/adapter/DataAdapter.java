@@ -25,7 +25,6 @@ public class DataAdapter extends CommonAdapter<FinanceBean.ResultBean.DataBean> 
         holder.setText(R.id.tv_author_name, "来源:" + dataBean.getAuthor_name());
         holder.setText(R.id.tv_time, dataBean.getDate());
         Glide.with(mContext).load(dataBean.getThumbnail_pic_s()).into((ImageView) holder.getView(R.id.iv_icon));
-
         holder.setOnClickListener(R.id.ll_content, new View.OnClickListener() {
             @Override
             public void onClick(View v) {

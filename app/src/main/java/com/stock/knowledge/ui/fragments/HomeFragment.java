@@ -15,6 +15,7 @@ import com.stock.knowledge.R;
 import com.stock.knowledge.base.BannerBean;
 import com.stock.knowledge.ui.activities.ExamActivity;
 import com.stock.knowledge.ui.activities.ExamListActivity;
+import com.stock.knowledge.ui.activities.QuestionActivity;
 import com.stock.knowledge.ui.adapter.BannerAdapter;
 import com.stock.knowledge.ui.login.ui.login.LoginActivity;
 import com.stock.knowledge.utils.SharedPreferencesUtil;

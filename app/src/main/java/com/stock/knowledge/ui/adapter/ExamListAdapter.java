@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.stock.knowledge.R;
 import com.stock.knowledge.base.ExamListBean;
 import com.stock.knowledge.ui.activities.ExamActivity;
+import com.stock.knowledge.ui.activities.QuestionActivity;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
@@ -31,7 +32,7 @@ public class ExamListAdapter extends CommonAdapter<ExamListBean> {
         holder.setOnClickListener(R.id.card_item, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, ExamActivity.class);
+                Intent intent = new Intent(mContext, QuestionActivity.class);
                 intent.putExtra("title", examListBean.getTitle());
                 intent.putExtra("id", examListBean.getId());
                 intent.putExtra("num", examListBean.getNum());

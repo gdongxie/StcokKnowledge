@@ -24,4 +24,9 @@
     <string name="text_suggest">意见反馈</string>
     <string name="text_about">关于我们</string>
     <string name="hint_advice">请输入您的意见或者建议</string>
+    <string name="app_base_url">https://www.cuour.org</string>
+    <string name="view_analysis">查看解析</string>
+    <string name="answer_analysis">答案解析</string>
+    <string name="unanswered">未作答</string>
+
 </resources>

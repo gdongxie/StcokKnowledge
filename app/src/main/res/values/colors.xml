@@ -12,4 +12,20 @@
     <color name="color_black">#000000</color>
     <color name="color_gray">#9a9a9a</color>
     <color name="color_translucent">#00000000</color>
+
+    <color name="es_font_1">#313131</color>
+    <color name="es_font_2">#616161</color>
+    <color name="es_font_3">#919191</color>
+    <color name="es_font_4">#B0BDC9</color>
+    <color name="es_divider">#F5F5F5</color>
+
+    <color name="yellow">#FF9800</color>
+    <color name="es_green">#01AE66</color>
+    <color name="es_font_white">#FFFFFF</color>
+    <color name="red">#FF5722</color>
+    <color name="es_bg">#F5F5F5</color>
+    <color name="color_silver">#C4C7CC</color>
+    <color name="color_323C32">#323C32</color>
+    <color name="color_F8F8F8">#F8F8F8</color>
+    <color name="color_11D69A">#11D69A</color>
 </resources>
