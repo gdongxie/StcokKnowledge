@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -13,7 +17,6 @@ import androidx.fragment.app.Fragment;
 
 import com.stock.knowledge.R;
 import com.stock.knowledge.base.BannerBean;
-import com.stock.knowledge.ui.activities.ExamActivity;
 import com.stock.knowledge.ui.activities.ExamListActivity;
 import com.stock.knowledge.ui.activities.QuestionActivity;
 import com.stock.knowledge.ui.adapter.BannerAdapter;
@@ -39,7 +42,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private List<BannerBean> bannerBeans = new ArrayList<>();
     private TextView textView;
     private Typeface textTypeface;
-
     public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
         return fragment;
@@ -151,7 +153,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.rl_random:
                 if (SharedPreferencesUtil.getBoolean(Objects.requireNonNull(getActivity()).getApplicationContext(),
                         "isLogin", false)) {
-                    Intent intent = new Intent(getContext(), ExamActivity.class);
+                    Intent intent = new Intent(getContext(), QuestionActivity.class);
                     intent.putExtra("title", "随机检验");
                     intent.putExtra("id", 4);
                     intent.putExtra("num", "29");
@@ -163,7 +165,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.rl_everyday:
                 if (SharedPreferencesUtil.getBoolean(Objects.requireNonNull(getActivity()).getApplicationContext(),
                         "isLogin", false)) {
-                    Intent intent = new Intent(getContext(), ExamActivity.class);
+                    Intent intent = new Intent(getContext(), QuestionActivity.class);
                     intent.putExtra("title", "每日一练");
                     intent.putExtra("id", 7);
                     intent.putExtra("num", "13");
