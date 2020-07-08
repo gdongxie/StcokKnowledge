@@ -1,6 +1,5 @@
 package com.stock.knowledge.ui.login.ui.login;
 
-import android.app.Activity;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -18,6 +17,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +46,13 @@ public class LoginActivity extends BaseActivity {
         final TextView tv_register = findViewById(R.id.tv_register);
         final TextView tv_protocol = findViewById(R.id.tv_protocol);
         final TextView tv_privacy = findViewById(R.id.tv_privacy);
+        final ImageView iv_back = findViewById(R.id.iv_back);
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
             public void onChanged(@Nullable LoginFormState loginFormState) {
