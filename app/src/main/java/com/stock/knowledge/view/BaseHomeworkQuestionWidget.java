@@ -24,9 +24,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.gson.internal.LinkedTreeMap;
 import com.stock.knowledge.R;
-import com.stock.knowledge.base.HomeworkAnswerBean;
-import com.stock.knowledge.base.HomeworkQuestionBean;
-import com.stock.knowledge.base.HomeworkQuestionTypeBean;
+import com.stock.knowledge.beans.HomeworkAnswerBean;
+import com.stock.knowledge.beans.HomeworkQuestionBean;
+import com.stock.knowledge.beans.HomeworkQuestionTypeBean;
 import com.stock.knowledge.html.EduHtml;
 import com.stock.knowledge.html.EduImageGetterHandler;
 import com.stock.knowledge.html.EduTagHandler;

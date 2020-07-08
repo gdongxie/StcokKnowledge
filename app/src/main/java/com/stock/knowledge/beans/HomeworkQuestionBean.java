@@ -1,4 +1,4 @@
-package com.stock.knowledge.base;
+package com.stock.knowledge.beans;
 
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 

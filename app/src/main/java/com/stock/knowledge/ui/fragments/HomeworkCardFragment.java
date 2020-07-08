@@ -22,8 +22,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import com.stock.knowledge.R;
-import com.stock.knowledge.base.HomeworkAnswerBean;
-import com.stock.knowledge.base.HomeworkQuestionBean;
+import com.stock.knowledge.beans.HomeworkAnswerBean;
+import com.stock.knowledge.beans.HomeworkQuestionBean;
 import com.stock.knowledge.ui.activities.QuestionActivity;
 import com.stock.knowledge.ui.adapter.ExamCardAdapter;
 import com.stock.knowledge.view.FixHeightGridView;

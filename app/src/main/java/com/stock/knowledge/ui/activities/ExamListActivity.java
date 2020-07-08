@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.stock.knowledge.R;
 import com.stock.knowledge.base.BaseActivity;
-import com.stock.knowledge.base.ExamListBean;
+import com.stock.knowledge.beans.ExamListBean;
 import com.stock.knowledge.ui.adapter.ExamListAdapter;
 import com.stock.knowledge.utils.AssetsDatabaseManager;
 

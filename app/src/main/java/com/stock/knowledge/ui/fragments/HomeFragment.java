@@ -6,17 +6,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.stock.knowledge.R;
-import com.stock.knowledge.base.BannerBean;
+import com.stock.knowledge.beans.BannerBean;
 import com.stock.knowledge.ui.activities.ExamListActivity;
 import com.stock.knowledge.ui.activities.QuestionActivity;
 import com.stock.knowledge.ui.adapter.BannerAdapter;

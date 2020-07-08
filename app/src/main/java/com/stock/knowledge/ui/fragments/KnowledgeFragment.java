@@ -17,7 +17,6 @@ import com.stock.knowledge.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * @ClassName: DataFragment
@@ -25,15 +24,15 @@ import java.util.Objects;
  * @Author: dongxie
  * @CreateDate: 2020/6/23 20:18
  */
-public class StockFragment extends Fragment {
+public class KnowledgeFragment extends Fragment {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private List<Fragment> fragmentList = new ArrayList<>();
-    private String[] strings = new String[]{"港股", "美股"};
+    private String[] strings = new String[]{"基础知识", "交易指南"};
 
 
-    public static StockFragment newInstance() {
-        StockFragment fragment = new StockFragment();
+    public static KnowledgeFragment newInstance() {
+        KnowledgeFragment fragment = new KnowledgeFragment();
         return fragment;
     }
 
@@ -54,8 +53,8 @@ public class StockFragment extends Fragment {
     private void initView(View view) {
         tabLayout = view.findViewById(R.id.tabLayout);
         viewPager = view.findViewById(R.id.viewPager);
-        fragmentList.add(HKStocksFragment.newInstance());
-        fragmentList.add(UsStockFragment.newInstance());
+        fragmentList.add(BaseKnowledgeFragment.newInstance());
+        fragmentList.add(GuideFragment.newInstance());
         MyAdapter myAdapter = new MyAdapter(getParentFragmentManager());
         viewPager.setAdapter(myAdapter);
         tabLayout.setupWithViewPager(viewPager);

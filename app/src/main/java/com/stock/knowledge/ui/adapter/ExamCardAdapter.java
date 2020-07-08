@@ -8,10 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.stock.knowledge.R;
-import com.stock.knowledge.base.HomeworkAnswerBean;
-import com.stock.knowledge.base.HomeworkItemResultBean;
-import com.stock.knowledge.base.HomeworkQuestionBean;
-import com.stock.knowledge.base.HomeworkQuestionTypeBean;
+import com.stock.knowledge.beans.HomeworkAnswerBean;
+import com.stock.knowledge.beans.HomeworkItemResultBean;
+import com.stock.knowledge.beans.HomeworkQuestionBean;
+import com.stock.knowledge.beans.HomeworkQuestionTypeBean;
 
 import java.util.ArrayList;
 

@@ -3,7 +3,7 @@ package com.stock.knowledge.ui.adapter;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.stock.knowledge.R;
-import com.stock.knowledge.base.HomeworkQuestionBean;
+import com.stock.knowledge.beans.HomeworkQuestionBean;
 
 import java.util.List;
 

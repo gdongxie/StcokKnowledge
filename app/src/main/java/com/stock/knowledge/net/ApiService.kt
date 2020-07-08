@@ -1,8 +1,7 @@
 package com.stock.knowledge.net
 
-import com.stock.knowledge.base.FinanceBean
-import com.stock.knowledge.base.HkStockBean
-import com.stock.knowledge.base.UsaStockBean
+import com.stock.knowledge.beans.HkStockBean
+import com.stock.knowledge.beans.UsaStockBean
 import io.reactivex.Flowable
 import retrofit2.http.GET
 import retrofit2.http.Query

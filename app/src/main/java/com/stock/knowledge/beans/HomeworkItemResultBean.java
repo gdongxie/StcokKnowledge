@@ -1,4 +1,4 @@
-package com.stock.knowledge.base;
+package com.stock.knowledge.beans;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.stock.knowledge.R;
-import com.stock.knowledge.base.HomeworkQuestionBean;
-import com.stock.knowledge.base.HomeworkQuestionTypeBean;
+import com.stock.knowledge.beans.HomeworkQuestionBean;
+import com.stock.knowledge.beans.HomeworkQuestionTypeBean;
 import com.stock.knowledge.view.BaseHomeworkQuestionWidget;
 
 import java.util.ArrayList;

@@ -10,7 +10,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.stock.knowledge.R;
-import com.stock.knowledge.base.HomeworkQuestionBean;
+import com.stock.knowledge.beans.HomeworkQuestionBean;
 
 import org.greenrobot.eventbus.EventBus;
 

@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.stock.knowledge.R;
-import com.stock.knowledge.base.FinanceBean;
+import com.stock.knowledge.beans.FinanceBean;
 import com.stock.knowledge.ui.activities.WebViewActivity;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;

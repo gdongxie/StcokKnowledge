@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 import com.stock.knowledge.R;
 import com.stock.knowledge.base.BaseActivity;
-import com.stock.knowledge.base.OptionBean;
-import com.stock.knowledge.base.ProblemBean;
+import com.stock.knowledge.beans.OptionBean;
+import com.stock.knowledge.beans.ProblemBean;
 import com.stock.knowledge.utils.AssetsDatabaseManager;
 
 import java.util.ArrayList;

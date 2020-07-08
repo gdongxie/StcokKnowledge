@@ -10,7 +10,7 @@ import android.view.ViewStub;
 import android.widget.EditText;
 
 import com.stock.knowledge.R;
-import com.stock.knowledge.base.HomeworkQuestionBean;
+import com.stock.knowledge.beans.HomeworkQuestionBean;
 import com.stock.knowledge.ui.activities.QuestionActivity;
 
 

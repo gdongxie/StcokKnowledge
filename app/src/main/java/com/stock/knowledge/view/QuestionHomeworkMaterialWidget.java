@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stock.knowledge.R;
-import com.stock.knowledge.base.HomeworkQuestionBean;
+import com.stock.knowledge.beans.HomeworkQuestionBean;
 import com.stock.knowledge.ui.adapter.MaterialAdapter;
 
 import java.util.ArrayList;
