@@ -1,2 +1,2 @@
 rootProject.name='StockKnowledge'
-include ':app', ':base'
+include ':app'

@@ -14,7 +14,7 @@ public class MyApplication extends QsApplication {
 
     @Override
     public boolean isLogOpen() {
-        return true;
+        return false;
     }
 
     @Override
