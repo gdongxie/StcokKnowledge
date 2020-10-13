@@ -9,12 +9,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.stock.knowledge.view.HomeWorkViewPager
+        <com.stock.answer.view.HomeWorkViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-        </com.stock.knowledge.view.HomeWorkViewPager>
+        </com.stock.answer.view.HomeWorkViewPager>
 
         <RelativeLayout
             android:id="@+id/rl_bottom"
