@@ -46,36 +46,20 @@ public class RegisterActivity extends BaseActivity {
     }
 
     private void setListener() {
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
+        iv_back.setOnClickListener(v -> finish());
+        tv_protocol.setOnClickListener(v -> {
+            Intent intent = new Intent(RegisterActivity.this, AgreementActivity.class);
+            intent.putExtra("title", "用户协议");
+            startActivity(intent);
         });
-        tv_protocol.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, AgreementActivity.class);
-                intent.putExtra("title", "用户协议");
-                startActivity(intent);
-            }
-        });
-        tv_privacy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, AgreementActivity.class);
-                intent.putExtra("title", "隐私政策");
-                startActivity(intent);
-            }
+        tv_privacy.setOnClickListener(v -> {
+            Intent intent = new Intent(RegisterActivity.this, AgreementActivity.class);
+            intent.putExtra("title", "隐私政策");
+            startActivity(intent);
         });
 
 
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                register();
-            }
-        });
+        btn_register.setOnClickListener(v -> register());
 
 
     }
@@ -98,19 +82,16 @@ public class RegisterActivity extends BaseActivity {
             contentValues.put("mobile", et_username.getText().toString().trim());
             contentValues.put("password", et_password.getText().toString().trim());
             final long l = sqLiteDatabase.insert("user", null, contentValues);
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    loadingDialog.dismiss();
-                    if (l > 0L) {
-                        Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
-                        finish();
-                    } else {
-                        Toast.makeText(RegisterActivity.this, "注册失败,该账号已存在！",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                    databaseManager.closeDatabase("gupiao.db");
+            new Handler().postDelayed(() -> {
+                loadingDialog.dismiss();
+                if (l > 0L) {
+                    Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Toast.makeText(RegisterActivity.this, "注册失败,该账号已存在！",
+                            Toast.LENGTH_SHORT).show();
                 }
+                databaseManager.closeDatabase("gupiao.db");
             }, 1000);
         }
     }

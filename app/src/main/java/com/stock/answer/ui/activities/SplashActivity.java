@@ -29,6 +29,12 @@ import com.stock.answer.R;
 import com.stock.answer.utils.SharedPreferencesUtil;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
+import com.zyao89.view.zloading.ZLoadingDialog;
+import com.zyao89.view.zloading.Z_TYPE;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 import okhttp3.Call;
 
@@ -38,6 +44,7 @@ public class SplashActivity extends AppCompatActivity {
     private Typeface textTypeface, descTypeface;
     private AlphaAnimation alphaAnimation;
     private ImageView iv_web_icon;
+    private ZLoadingDialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,13 @@ public class SplashActivity extends AppCompatActivity {
                 "/Lobster-1.4.otf");
         descTypeface = Typeface.createFromAsset(getApplicationContext().getAssets(), "fonts" +
                 "/FZLanTingHeiS-L-GB-Regular.TTF");
+        loadingDialog = new ZLoadingDialog(this);
+        loadingDialog.setLoadingBuilder(Z_TYPE.STAR_LOADING)
+                .setLoadingColor(getColor(R.color.colorLoading))
+                .setCancelable(false)
+                .setHintTextSize(16f)
+                .setHintTextColor(getColor(R.color.colorWhite))
+                .setDialogBackgroundColor(getColor(R.color.colorLoadingBackground));
         initView();
         check();
     }
@@ -127,7 +141,7 @@ public class SplashActivity extends AppCompatActivity {
         //设置点击事件
         ClickableSpan clickableSpan1 = new ClickableSpan() {
             @Override
-            public void onClick(View view) {
+            public void onClick(@NotNull View view) {
                 Intent intent = new Intent(SplashActivity.this, AgreementActivity.class);
                 intent.putExtra("title", "用户协议");
                 startActivity(intent);
@@ -169,7 +183,7 @@ public class SplashActivity extends AppCompatActivity {
         //设置弹框宽度占屏幕的80%
         WindowManager m = getWindowManager();
         Display defaultDisplay = m.getDefaultDisplay();
-        final WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+        final WindowManager.LayoutParams params = Objects.requireNonNull(dialog.getWindow()).getAttributes();
         params.width = (int) (defaultDisplay.getWidth() * 0.80);
         dialog.getWindow().setAttributes(params);
 
@@ -194,21 +208,26 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void getData() {
+        loadingDialog.setHintText("正在加载...");
+        loadingDialog.show();
         OkHttpUtils.get()
                 .url("http://mock-api.com/vzMr1bgG.mock/appconfig")
                 .build()
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
+                        loadingDialog.dismiss();
                     }
 
                     @Override
                     public void onResponse(String response, int id) {
-                        Log.e("res",response);
+                        Log.e("res", response);
                         SplashRequest.init(SplashActivity.this, response, new SplashCallback() {
                             @Override
                             public void onStartMainActivity() {
+                                loadingDialog.dismiss();
                                 redirectTo();
+
                             }
                         });
                     }

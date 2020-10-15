@@ -1,11 +1,17 @@
 package com.stock.answer.ui.adapter;
 
+import android.content.Intent;
+import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.stock.answer.beans.BannerBean;
 
 import java.util.List;
@@ -31,13 +37,13 @@ public class BannerAdapter extends com.youth.banner.adapter.BannerAdapter<Banner
         imageView.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         return new BannerViewHolder(imageView);
     }
 
     @Override
-    public void onBindView(BannerViewHolder holder, BannerBean data, int position, int size) {
-        holder.imageView.setImageResource(data.getImageRes());
+    public void onBindView(BannerViewHolder holder, final BannerBean data, int position, int size) {
+        Glide.with(holder.itemView).load(data.getImgUrl()).into(holder.imageView);
     }
 
     class BannerViewHolder extends RecyclerView.ViewHolder {

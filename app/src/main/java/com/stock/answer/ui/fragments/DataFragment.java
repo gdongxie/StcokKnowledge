@@ -76,43 +76,20 @@ public class DataFragment extends Fragment {
         refreshLayout.setReboundDuration(300);
         refreshLayout.setHeaderHeight(100);
         loadingDialog = new ZLoadingDialog(Objects.requireNonNull(getActivity()));
-        loadingDialog.setLoadingBuilder(Z_TYPE.ROTATE_CIRCLE)
+        loadingDialog.setLoadingBuilder(Z_TYPE.STAR_LOADING)
                 .setLoadingColor(getActivity().getColor(R.color.colorLoading))
                 .setCancelable(false)
                 .setHintTextSize(16f)
                 .setHintTextColor(getActivity().getColor(R.color.colorWhite))
                 .setDialogBackgroundColor(getActivity().getColor(R.color.colorLoadingBackground));
-        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onRefresh(@NotNull final RefreshLayout refreshlayout) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        refreshlayout.finishRefresh(true);
-                    }
-                }, 1000);
+        refreshLayout.setOnRefreshListener(refreshlayout -> new Handler().postDelayed(() -> refreshlayout.finishRefresh(true), 1000));
 
-            }
-        });
-
-        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
-            @Override
-            public void onLoadMore(@NotNull final RefreshLayout refreshlayout) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        refreshlayout.finishLoadMore(true);
-                    }
-                }, 1000);
-
-            }
-
-        });
+        refreshLayout.setOnLoadMoreListener(refreshlayout -> new Handler().postDelayed(() -> refreshlayout.finishLoadMore(true), 1000));
     }
 
     private void getData() {
         OkHttpUtils.get()
-                .url("http://v.juhe.cn/toutiao/index?type=top&key=c10a52bbc484e6fbfc571cc40082a9ee")
+                .url("http://v.juhe.cn/toutiao/index?type=top&key=01ed1debad9af88466463967f7593d0e")
                 .build()
                 .execute(new StringCallback() {
                     @Override

@@ -22,13 +22,13 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ImmersionBar.with(this).statusBarColor(R.color.colorRed).fitsSystemWindows(true).init();
+        ImmersionBar.with(this).statusBarColor(R.color.white).fitsSystemWindows(true).statusBarDarkFont(true).init();
         initLoading();
     }
 
     private void initLoading() {
         loadingDialog = new ZLoadingDialog(this);
-        loadingDialog.setLoadingBuilder(Z_TYPE.ROTATE_CIRCLE)
+        loadingDialog.setLoadingBuilder(Z_TYPE.STAR_LOADING)
                 .setLoadingColor(getColor(R.color.colorLoading))
                 .setCancelable(false)
                 .setHintTextSize(16f)

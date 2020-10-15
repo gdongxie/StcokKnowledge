@@ -67,7 +67,7 @@ public class QuestionActivity extends QsABActivity implements View.OnClickListen
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        ImmersionBar.with(this).statusBarColor(R.color.colorRed).fitsSystemWindows(true).init();
+        ImmersionBar.with(this).statusBarColor(R.color.white).statusBarDarkFont(true).fitsSystemWindows(true).init();
         id = getIntent().getIntExtra("id", 0);
         queryData();
     }

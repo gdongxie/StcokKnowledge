@@ -12,22 +12,20 @@ import com.stock.answer.beans.TabEntity
 import com.stock.answer.ui.fragments.DataFragment
 import com.stock.answer.ui.fragments.KnowledgeFragment
 import com.stock.answer.ui.fragments.HomeFragment
-import com.stock.answer.ui.fragments.MyFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
-    private val mTitles = arrayOf("首页", "知识", "资讯", "我的")
+    private val mTitles = arrayOf("首页", "知识", "资讯")
 
     //为选中图标
-    private val mIconSelectIds = intArrayOf(R.mipmap.home, R.mipmap.stock, R.mipmap.news, R.mipmap.my)
+    private val mIconSelectIds = intArrayOf(R.mipmap.home, R.mipmap.stock, R.mipmap.news)
 
     //选中的图标
-    private val mIconUnSelectIds = intArrayOf(R.mipmap.un_home, R.mipmap.un_stock, R.mipmap.un_news, R.mipmap.un_my)
+    private val mIconUnSelectIds = intArrayOf(R.mipmap.un_home, R.mipmap.un_stock, R.mipmap.un_news)
     private val mTabEntities = ArrayList<CustomTabEntity>()
     private var mHomeFragment: HomeFragment? = null
     private var mKnowledgeFragment: KnowledgeFragment? = null
     private var mDataFragment: DataFragment? = null
-    private var mMyFragment: MyFragment? = null
     private var mIndex = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,7 +74,6 @@ class MainActivity : BaseActivity() {
                     mHomeFragment = it
                     transaction.add(R.id.fl_container, it, "home")
                 }
-                tv_title.text = mTitles[position]
             }
             1
             -> {
@@ -86,7 +83,6 @@ class MainActivity : BaseActivity() {
                     mKnowledgeFragment = it
                     transaction.add(R.id.fl_container, it, "news")
                 }
-                tv_title.text = mTitles[position]
             }
             2
             -> {
@@ -96,17 +92,6 @@ class MainActivity : BaseActivity() {
                     mDataFragment = it
                     transaction.add(R.id.fl_container, it, "news")
                 }
-                tv_title.text = mTitles[position]
-            }
-            3
-            -> {
-                mMyFragment?.let {
-                    transaction.show(it)
-                } ?: MyFragment.newInstance().let {
-                    mMyFragment = it
-                    transaction.add(R.id.fl_container, it, "my")
-                }
-                tv_title.text = mTitles[position]
             }
         }
 
@@ -120,7 +105,6 @@ class MainActivity : BaseActivity() {
         mHomeFragment?.let { transaction.hide(it) }
         mKnowledgeFragment?.let { transaction.hide(it) }
         mDataFragment?.let { transaction.hide(it) }
-        mMyFragment?.let { transaction.hide(it) }
     }
 
     private var mExitTime: Long = 0

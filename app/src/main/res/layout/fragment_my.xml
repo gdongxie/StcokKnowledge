@@ -7,18 +7,80 @@
     tools:context=".ui.fragments.MyFragment">
 
     <RelativeLayout
-        android:id="@+id/rl_suggest"
+        android:id="@+id/rl_jifen"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/card_info"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp">
 
         <ImageView
+            android:id="@+id/iv_jifen"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/jifen" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/iv_jifen"
+            android:text="我的积分"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eeeeee" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rl_jifen"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <ImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/collect" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/iv_collect"
+            android:text="我的收藏"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eeeeee" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_suggest"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rl_collect"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <ImageView
             android:id="@+id/iv_suggest"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_centerVertical="true"
             android:src="@mipmap/suggest" />
 
@@ -29,7 +91,7 @@
             android:layout_marginStart="20dp"
             android:layout_toEndOf="@id/iv_suggest"
             android:text="@string/text_suggest"
-            android:textSize="16sp" />
+            android:textSize="15sp" />
 
         <View
             android:layout_width="match_parent"
@@ -42,16 +104,15 @@
     <RelativeLayout
         android:id="@+id/rl_update"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/rl_suggest"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp">
 
         <ImageView
             android:id="@+id/iv_update"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_centerVertical="true"
             android:src="@mipmap/update" />
 
@@ -62,7 +123,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
             android:text="V1.0.0"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -71,7 +132,7 @@
             android:layout_marginStart="20dp"
             android:layout_toEndOf="@id/iv_update"
             android:text="版本更新"
-            android:textSize="16sp" />
+            android:textSize="15sp" />
 
         <View
             android:layout_width="match_parent"
@@ -83,16 +144,15 @@
     <RelativeLayout
         android:id="@+id/rl_about"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/rl_update"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp">
 
         <ImageView
             android:id="@+id/iv_about"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_centerVertical="true"
             android:src="@mipmap/about" />
 
@@ -103,7 +163,7 @@
             android:layout_marginStart="20dp"
             android:layout_toEndOf="@id/iv_about"
             android:text="@string/text_about"
-            android:textSize="16sp" />
+            android:textSize="15sp" />
 
         <View
             android:layout_width="match_parent"
@@ -115,16 +175,15 @@
     <RelativeLayout
         android:id="@+id/rl_logOut"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/rl_about"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp">
 
         <ImageView
             android:id="@+id/iv_logOut"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_centerVertical="true"
             android:src="@mipmap/logout" />
 
@@ -135,7 +194,7 @@
             android:layout_marginStart="20dp"
             android:layout_toEndOf="@id/iv_logOut"
             android:text="@string/logout_account"
-            android:textSize="16sp" />
+            android:textSize="15sp" />
 
         <View
             android:layout_width="match_parent"

@@ -7,13 +7,31 @@ package com.stock.answer.beans;
  * @CreateDate: 2020/6/30 10:23
  */
 public class BannerBean {
-    public int getImageRes() {
-        return imageRes;
+    private String title;
+    private String imgUrl;
+    private String jumpUrl;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setImageRes(int imageRes) {
-        this.imageRes = imageRes;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    private int imageRes;
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public String getJumpUrl() {
+        return jumpUrl;
+    }
+
+    public void setJumpUrl(String jumpUrl) {
+        this.jumpUrl = jumpUrl;
+    }
 }

@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:name="com.stock.answer.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,25 +15,54 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.stock.answer.ui.activities.KnowledgeDetailsActivity"/>
-        <activity android:name="com.stock.answer.ui.activities.QuestionActivity" />
-        <activity android:name="com.stock.answer.ui.activities.FeedBackActivity" />
-        <activity android:name="com.stock.answer.ui.register.RegisterActivity" />
+        <activity android:name=".ui.activities.MyScoreActivity"></activity>
+        <activity android:name=".ui.activities.CollectActivity" />
         <activity
-            android:name="com.stock.answer.ui.login.ui.login.LoginActivity"
-            android:launchMode="singleTop" />
-        <activity android:name="com.stock.answer.ui.activities.AgreementActivity" />
-        <activity android:name="com.stock.answer.ui.activities.SplashActivity">
+            android:name=".ui.activities.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.MyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.KnowledgeDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.QuestionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.FeedBackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.ui.login.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.AgreementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.stock.answer.ui.activities.MainActivity" />
-        <activity android:name="com.stock.answer.ui.activities.WebViewActivity" />
-        <activity android:name="com.stock.answer.ui.activities.ExamListActivity" />
-        <activity android:name="com.stock.answer.ui.activities.ExamActivity" />
+        <activity
+            android:name=".ui.activities.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.ExamListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activities.ExamActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

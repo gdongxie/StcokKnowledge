@@ -56,29 +56,19 @@ public class FeedBackActivity extends BaseActivity {
             }
         });
 
-        btn_submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!TextUtils.isEmpty(et_suggest.getText().toString().trim())) {
-                    loadingDialog.show();
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            loadingDialog.dismiss();
-                            Toast.makeText(FeedBackActivity.this, "我们已收到您的意见,谢谢",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    }, 1000);
-                } else {
-                    Toast.makeText(FeedBackActivity.this, "请输入要反馈的意见或建议", Toast.LENGTH_SHORT).show();
-                }
+        btn_submit.setOnClickListener(v -> {
+            if (!TextUtils.isEmpty(et_suggest.getText().toString().trim())) {
+                loadingDialog.show();
+                new Handler().postDelayed(() -> {
+                    loadingDialog.dismiss();
+                    et_suggest.setText("");
+                    Toast.makeText(FeedBackActivity.this, "我们已收到您的意见,谢谢",
+                            Toast.LENGTH_SHORT).show();
+                }, 1000);
+            } else {
+                Toast.makeText(FeedBackActivity.this, "请输入要反馈的意见或建议", Toast.LENGTH_SHORT).show();
             }
         });
-        iv_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        iv_back.setOnClickListener(v -> finish());
     }
 }
